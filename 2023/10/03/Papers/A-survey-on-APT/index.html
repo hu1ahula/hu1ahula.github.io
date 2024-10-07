@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="HulaHula">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://hu1ahula.github.io/2023/10/03/papers/a-survey-on-apt/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="false">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Survey on Advanced Persistent Threats: Techniques, Solutions, Challenges, and Research Opportunities">
+<meta property="og:url" content="http://hu1ahula.github.io/2023/10/03/Papers/A-survey-on-APT/index.html">
+<meta property="og:site_name" content="HulaHula">
+<meta property="og:description" content="false">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://z1.ax1x.com/2023/10/03/pPOpBoq.md.png">
+<meta property="og:image" content="https://z1.ax1x.com/2023/10/03/pPOPFds.md.png">
+<meta property="og:image" content="https://z1.ax1x.com/2023/10/03/pPOPaOe.md.png">
+<meta property="og:image" content="https://z1.ax1x.com/2023/10/04/pPOgcCT.md.png">
+<meta property="og:image" content="https://z1.ax1x.com/2023/10/04/pPOgJ4f.md.png">
+<meta property="og:image" content="https://z1.ax1x.com/2023/10/05/pPXPaDg.md.png">
+<meta property="og:image" content="https://z1.ax1x.com/2023/10/05/pPXewh4.md.png">
+<meta property="og:image" content="https://z1.ax1x.com/2023/10/05/pPXGy79.md.png">
+<meta property="article:published_time" content="2023-10-03T01:50:23.000Z">
+<meta property="article:modified_time" content="2023-12-18T03:37:30.240Z">
+<meta property="article:author" content="HulaHula">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://z1.ax1x.com/2023/10/03/pPOpBoq.md.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://s11.ax1x.com/2023/12/19/pio9e0J.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://s11.ax1x.com/2023/12/19/pio9e0J.jpg">
+    <meta name="theme-color" content="#0099FF">
+    <link rel="shortcut icon" href="https://s11.ax1x.com/2023/12/19/pio9e0J.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            A Survey on Advanced Persistent Threats: Techniques, Solutions, Challenges, and Research Opportunities -
+        
+        HulaHula&#39;s Blog
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    window.config = {"hostname":"hu1ahula.github.io","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":false},"author_label":{"enable":false,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":false,"expand":true,"init_open":true},"copyright":false,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#0099FF","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":false,"scale":true},"scroll_progress":{"bar":true,"percentage":true},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":false,"site_pv":false,"site_uv":false,"post_pv":false},"single_page":true,"preloader":false,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"https://source.unsplash.com/1920x1080/?nature,dark","dark":"https://source.unsplash.com/1920x1080/?nature,dark"},"title":"Hi There","subtitle":{"text":["What I cannot create, I do not understand —— Richard Feynman"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn?c=d&c=i"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":false,"smart_backspace":false},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.0","navbar":{"auto_hide":false,"color":{"left":"#CCFFFF","right":"#CC66FF","transparency":35},"links":{"Home":{"path":"/","icon":"fa-duotone fa-house"},"About":{"icon":"fa-duotone fa-user","submenus":{"Problems":"/about","Friends":"/links"}},"Categories":{"icon":"fa-duotone fa-folder","submenus":{"算法":"/categories/算法","论文":"/categories/论文","CTF":"/categories/CTF","其他":"/categories/其他"}}},"search":{"enable":true,"preload":false},"categories":{"Categories":{"icon":"fa-duotone fa-folder","path":"/categories/"}},"tags":{"Tags":{"icon":"fa-duotone fa-tags","path":"/tags/"}}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"info","announcement":null,"links":{"Archives":{"path":"/archives/","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags/","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories/","icon":"fa-regular fa-folder"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/8/30 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+        
+<link rel="stylesheet" href="/fontawesome/duotone.min.css">
+
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="https://s11.ax1x.com/2023/12/19/pio9ukR.jpg">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                HulaHula&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-duotone fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-duotone fa-user fa-fw"></i>
+                                    ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    PROBLEMS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/links">
+                                                    FRIENDS
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-duotone fa-folder fa-fw"></i>
+                                    CATEGORIES
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/categories/%E7%AE%97%E6%B3%95">
+                                                    算法
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/categories/%E8%AE%BA%E6%96%87">
+                                                    论文
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/categories/CTF">
+                                                    CTF
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/categories/%E5%85%B6%E4%BB%96">
+                                                    其他
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-duotone fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">PROBLEMS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/links">FRIENDS</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-Categories"
+                        >
+                            <span>
+                                CATEGORIES
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-Categories">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/categories/%E7%AE%97%E6%B3%95">算法</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/categories/%E8%AE%BA%E6%96%87">论文</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/categories/CTF">CTF</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/categories/%E5%85%B6%E4%BB%96">其他</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">5</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                
+                
+                <img src="https://z1.ax1x.com/2023/10/03/pPLxNQJ.png" alt="A Survey on Advanced Persistent Threats: Techniques, Solutions, Challenges, and Research Opportunities" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
+                
+                <div class="w-full flex items-center absolute bottom-0 justify-start">
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-bold backdrop-blur-lg rounded-xl border border-border-color ">A Survey on Advanced Persistent Threats: Techniques, Solutions, Challenges, and Research Opportunities</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="https://s11.ax1x.com/2023/12/19/pio9ukR.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">HulaHula</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-10-03 09:50:23</span>
+        <span class="mobile">2023-10-03 09:50:23</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-12-18 11:37:30</span>
+            <span class="mobile">2023-12-18 11:37:30</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%BA%E6%96%87/">论文</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.4k Words</span>
+        </span>
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><ul>
+<li>APT攻击越来越深入</li>
+<li>很难实现全攻击面的APT检测</li>
+<li>本文介绍了各个阶段可能的攻击方法</li>
+</ul>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
+<li>APT防御应该在各个阶段</li>
+</ul>
+<h2 id="Section-Ⅱ-Definition-of-APT"><a href="#Section-Ⅱ-Definition-of-APT" class="headerlink" title="Section Ⅱ : Definition of APT"></a>Section Ⅱ : Definition of APT</h2><h3 id="Advanced-Persistent-Threat"><a href="#Advanced-Persistent-Threat" class="headerlink" title="Advanced Persistent Threat"></a>Advanced Persistent Threat</h3><ul>
+<li>Advanced : 攻击者很rich，有高级工具可以使用，保证攻击的持久性和有效性</li>
+<li>Persistent : 一旦进入系统，长时间停留，依靠各种手段绕过检测</li>
+<li>Threat : 收集敏感数据</li>
+</ul>
+<h3 id="APT-or-Targeted-Attack"><a href="#APT-or-Targeted-Attack" class="headerlink" title="APT or Targeted Attack ?"></a>APT or Targeted Attack ?</h3><p>APT攻击与传统攻击的主要区别<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pPOpBoq"><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://z1.ax1x.com/2023/10/03/pPOpBoq.md.png"
+                      alt="pPOpBoq.md.png"
+                ></a></p>
+<p>如下满足其一则不属于 APT attack：</p>
+<ul>
+<li>攻击有多种预防措施</li>
+<li>攻击者不需要为了防御做过多的准备</li>
+<li>攻击在其变体中没有表现出任何新特性</li>
+</ul>
+<p>NIST(National Institute of Standards and Technology)描述的APT攻击的三个目标：</p>
+<ul>
+<li>Steal Organization Data</li>
+<li>Undermine Organization’s Critical Aspects</li>
+<li>Position for Future</li>
+</ul>
+<h3 id="How-APT-attacks-are-made"><a href="#How-APT-attacks-are-made" class="headerlink" title="How APT attacks are made?"></a>How APT attacks are made?</h3><p>APT Attack Tree<br>文章作者归纳了一棵通用攻击树，大概包含APT攻击所需要实施的步骤，并分别根据NIST的三个目标做了细化<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://z1.ax1x.com/2023/10/03/pPOPFds.md.png"
+                      alt="pPOPFds.md.png"
+                ></p>
+<p>在结合了其他文章后，作者归纳了如下流程图：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://z1.ax1x.com/2023/10/03/pPOPaOe.md.png"
+                      alt="pPOPaOe.md.png"
+                ></p>
+
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>侦察</p>
+
+    </div>
+    <div class="notel-content">
+      <p>以被动攻击为主，作为前期情报搜集工作，利用社工、渗透测试等方式，了解网络拓扑以及相关信息，为后期做准备。</p>
+
+    </div>
+  </div>
+
+
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>建立落脚点</p>
+
+    </div>
+    <div class="notel-content">
+      <p>在前期侦察过程后，能够发现设施的脆弱性，尝试利用脆弱性干到内网里。通常包括如下手段：</p>
+<ul>
+<li>已知漏洞利用，包括已经在用户端中安装的软件存在的可利用的漏洞</li>
+<li>恶意软件，通过在用户端运行定制开发的恶意软件达到攻击效果</li>
+<li>网络钓鱼，针对特定目标发送钓鱼邮件，负载恶意软件，用户在运行或下载后使攻击者进驻网络</li>
+<li>0day漏洞，程序存在的漏洞，但并未被公开修复，且未被告知，这种利用方式不多但往往很致命</li>
+<li>网络下载</li>
+<li>水坑攻击，字面意思，在目标必经之路上设置陷阱，通常是在目标经常使用的网站中注入陷阱。目标一旦访问该网站，就会下载恶意负载，帮助攻击者进入内网</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://z1.ax1x.com/2023/10/04/pPOgcCT.md.png"
+                      alt="pPOgcCT.md.png"
+                ></p>
+<p>攻击者一旦进入到内网中，就会低调行事，尝试建立 C&amp;C (Commadn and Control) 通信通道，以部署后续攻击，在此期间，程序要防止自己被检测工具发现<br>大多数恶意程序通过 DNS 服务来进行定位，以向总部发出自己的位置。</p>
+
+    </div>
+  </div>
+
+
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>横向探索&#x2F;不被发现</p>
+
+    </div>
+    <div class="notel-content">
+      <p>一旦进入目标系统，获得了其访问权限，则可以传播到内网的其他系统中，访问更多资源。<br>有时需要提权、密钥转储等技术以获得给更多信息。具体所选择的方法取决于具体环境。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://z1.ax1x.com/2023/10/04/pPOgJ4f.md.png"
+                      alt="pPOgJ4f.md.png"
+                ></p>
+<p>文章提到了一些密码工具有：mimikatz、Windows Credential Editor<br>(WCE)<br>其核心是在内存中解析并提取 Windows本地安全授权(LSA)</p>
+
+    </div>
+  </div>
+
+
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>报告信息&#x2F;实施拦截</p>
+
+    </div>
+    <div class="notel-content">
+      <p>攻击者将收集到的数据输出到 C&amp;C 服务器，由于大多数 IDS 仅对入口检测，而不对出口过滤，因此这些泄露可能无法被检测。<br>通常数据泄露会分成多个批次分配到不同IP的主机上。</p>
+
+    </div>
+  </div>
+
+
+  <div class="note-large red">
+    <div class="notel-title rounded-t-lg p-3 font-bold text-lg flex flex-row gap-2 items-center">
+      <p>后渗透工作</p>
+
+    </div>
+    <div class="notel-content">
+      <p>攻击者不单单要考虑渗透成功，还要考虑可持续性，即可以随时解除或保持攻击。同时还要考虑到在攻击过程中的任何一部都有可能被日志记录并作为溯源的依据。</p>
+
+    </div>
+  </div>
+
+
+  <div class="note p-4 mb-4 rounded-small default">
+    <p>关于 C&amp;C (Command and Control Communication)</p>
+
+  </div>
+<p>这是在被攻击主机与发起方进行沟通的隧道，常用的通信协议包括Http(s)、IRC、P2P以及其他自定义协议。<br>由于大多数企业视Http连接合法，并且其他流量具有明显的特征，容易被标记，因此通常采用Http协议。</p>
+<h2 id="Section-Ⅲ-Case-Study"><a href="#Section-Ⅲ-Case-Study" class="headerlink" title="Section Ⅲ : Case Study"></a>Section Ⅲ : Case Study</h2><h2 id="Section-Ⅳ-Defense-Methods"><a href="#Section-Ⅳ-Defense-Methods" class="headerlink" title="Section Ⅳ : Defense Methods"></a>Section Ⅳ : Defense Methods</h2><p>防治 APT 攻击应该以纵深防御原则，即在每一层都设有检测<br>即使攻击者攻破第一层后，还有后面一系列安全措施，不至于功亏一篑</p>
+<p>大概分类如图：</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://z1.ax1x.com/2023/10/05/pPXPaDg.md.png"
+                      alt="pPXPaDg.md.png"
+                ></p>
+<ol>
+<li><p>监控 Monitoring<br>包括 磁盘监控（文件&#x2F;CPU占用）、内存监控、流量监控（端口、时间、大小等）、代码审计、日志审计</p>
+</li>
+<li><p>检测 Detection<br>包括 异常检测、模式匹配、</p>
+</li>
+</ol>
+<h4 id="异常检测"><a href="#异常检测" class="headerlink" title="异常检测"></a>异常检测</h4><p>文章列出了目前存在的 APT 的应对策略：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://z1.ax1x.com/2023/10/05/pPXewh4.md.png"
+                      alt="pPXewh4.md.png"
+                ></p>
+<p>这些手段往往是静态的，攻击者往往会尝试绕过这些检测</p>
+
+  <div class="note p-4 mb-4 rounded-small red">
+    <p>方法论</p>
+
+  </div>
+<p>Hodge &amp; Austin 将异常检测分为了三类：无监督聚类、有监督分类、半监督学习<br>作者进一步将异常检测方法分为统计异常检测、基于神经网络的异常检测和基于机器学习的异常检测</p>
+<p>Chandola 等人提出了另外两种检测方法：information theoretic anomaly detection 和 spectral anomaly detection techniques<br>（信息理论异常检测技术和光谱异常检测技术）</p>
+<p>Chandola 等人又从离散序列的异常检测出发，将其检测方法分为三类：sequence-based，contiguous sub-sequence based， pattern frequency-based （序列检测、连续序列检测、频率检测）</p>
+<p>Mehmood 等人总结了通过机器学习实现的异常检测系统，包括：SVM、Fuzzy Logic、Genetic Algorithm、K-means、ANN、Association Rule 等方法</p>
+<p>作者列举了ML在异常检测中各阶段的作用以及挑战：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://z1.ax1x.com/2023/10/05/pPXGy79.md.png"
+                      alt="pPXGy79.md.png"
+                ></p>
+<h4 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h4><p>这是相对较老的技术，通过观察进程和&#x2F;或应用程序的行为模式，可以检测到恶意行为</p>
+<ol start="3">
+<li>Mitigation</li>
+</ol>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/01/28/other/tricks/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">指令速查</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/09/24/ctf/bandit/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Overthewire Bandit 通关笔记</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">A Survey on Advanced Persistent Threats: Techniques, Solutions, Challenges, and Research Opportunities</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstract"><span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Section-%E2%85%A1-Definition-of-APT"><span class="nav-text">Section Ⅱ : Definition of APT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Advanced-Persistent-Threat"><span class="nav-text">Advanced Persistent Threat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#APT-or-Targeted-Attack"><span class="nav-text">APT or Targeted Attack ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-APT-attacks-are-made"><span class="nav-text">How APT attacks are made?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Section-%E2%85%A2-Case-Study"><span class="nav-text">Section Ⅲ : Case Study</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Section-%E2%85%A3-Defense-Methods"><span class="nav-text">Section Ⅳ : Defense Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B"><span class="nav-text">异常检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D"><span class="nav-text">模式匹配</span></a></li></ol></li></ol></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-square-h fa-beat" style="--fa-animation-duration: 1.5s;"></i>&nbsp;&nbsp;<a href="/">HulaHula</a>
+        </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/libs/anime.min.js"></script>
+'
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>
